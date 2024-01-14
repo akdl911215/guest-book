@@ -1,6 +1,8 @@
 package com.jh.guestbook.service;
 
 import com.jh.guestbook.dto.GuestbookDTO;
+import com.jh.guestbook.dto.PageRequestDTO;
+import com.jh.guestbook.dto.PageResultDTO;
 import com.jh.guestbook.entity.Guestbook;
 import com.jh.guestbook.repository.GuestbookRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,5 +29,10 @@ public class GuestbookServiceImpl implements GuestbookService{
         repository.save(entity);
 
         return entity.getGno();
+    }
+
+    @Override
+    public PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO) {
+        return null;
     }
 }
