@@ -6,7 +6,9 @@ import com.jh.guestbook.dto.PageResultDTO;
 import com.jh.guestbook.entity.Guestbook;
 
 public interface GuestbookService {
-    Long register(GuestbookDTO dto);
+
+    GuestbookDTO read(Long gno);
+    GuestbookDTO register(GuestbookDTO dto);
 
     PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO);
 
