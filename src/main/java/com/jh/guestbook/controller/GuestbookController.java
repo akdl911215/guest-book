@@ -27,6 +27,22 @@ public class GuestbookController {
         return "Hello World";
     }
 
+    @PatchMapping("/remove")
+    public GuestbookDTO remove(GuestbookDTO dto) {
+
+        log.info("remove dto : " + dto);
+
+        return service.remove(dto);
+    }
+
+    @PatchMapping("/modify")
+    public GuestbookDTO modify(GuestbookDTO dto) {
+
+        log.info("modify dto : " + dto);
+
+        return service.modify(dto);
+    }
+
     @GetMapping("/list")
     public PageResultDTO list(PageRequestDTO pageRequestDTO) {
         log.info("list........." + pageRequestDTO);

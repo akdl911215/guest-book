@@ -10,6 +10,10 @@ public interface GuestbookService {
     GuestbookDTO read(Long gno);
     GuestbookDTO register(GuestbookDTO dto);
 
+    GuestbookDTO remove(GuestbookDTO dto);
+
+    GuestbookDTO modify(GuestbookDTO dto);
+
     PageResultDTO<GuestbookDTO, Guestbook> getList(PageRequestDTO requestDTO);
 
     default Guestbook dtoToEntity(GuestbookDTO dto) {
@@ -31,6 +35,7 @@ public interface GuestbookService {
                 .writer(entity.getWriter())
                 .regDate(entity.getRegDate())
                 .modDate(entity.getModDate())
+                .delDate(entity.getDelDate())
                 .build();
 
         return dto;

@@ -3,6 +3,8 @@ package com.jh.guestbook.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Entity
 @Getter
 @Builder
@@ -24,6 +26,9 @@ public class Guestbook extends BaseEntity {
     @Column(length = 50, nullable = false)
     private String writer;
 
+    @Column(nullable = true)
+    private LocalDateTime delDate;
+
     public void changeTitle(String title) {
         this.title = title;
     }
@@ -31,4 +36,6 @@ public class Guestbook extends BaseEntity {
     public void changeContent(String content) {
         this.content = content;
     }
+
+    public void changeDelDate(LocalDateTime delDate) { this.delDate = delDate; }
 }
